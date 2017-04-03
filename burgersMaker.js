@@ -21,6 +21,6 @@ const burguers = [
 
 bus.subscribe('create_order', function(data) {
   setInterval(function() {
-    bus.publish('done.burger', { order: data.id, item: burguers[data.details.burger] });
+    bus.publish('done.burger', { order: data.id, type: 'burger', item: burguers[data.details.burger] });
   }, 1000);
 });

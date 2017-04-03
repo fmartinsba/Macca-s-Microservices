@@ -34,6 +34,6 @@ const drinks = [
 
 bus.subscribe('create_order', function(data) {
   setInterval(function() {
-    bus.publish('done.drink', { order: data.id, item: drinks[data.details.drink] });
+    bus.publish('done.drink', { order: data.id, type: 'drink', item: drinks[data.details.drink] });
   }, 1000);
 });

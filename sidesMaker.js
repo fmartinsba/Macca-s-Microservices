@@ -10,6 +10,6 @@ const sides = [
 
 bus.subscribe('create_order', function(data) {
   setInterval(function() {
-    bus.publish('done.side', { order: data.id, item: sides[data.details.side] });
+    bus.publish('done.side', { order: data.id, type: 'side', item: sides[data.details.side] });
   }, 1000);
 });
